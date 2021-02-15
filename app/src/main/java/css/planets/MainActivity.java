@@ -35,14 +35,20 @@ public class MainActivity extends AppCompatActivity {
     private void initializePlanetList() {
         planetList = new ArrayList<Planet>();
         // planet data from http://www.enchantedlearning.com/subjects/astronomy/planets/
-        planetList.add(new Planet("Mercury", 57.9, 4800.0));
-        planetList.add(new Planet("Venus", 108.2, 12104.0));
-        planetList.add(new Planet("Mars", 227.9, 6787.0));
-        planetList.add(new Planet("Jupiter", 227.9, 6787.0));
-        planetList.add(new Planet("Saturn", 227.9, 6787.0));
-        planetList.add(new Planet("Neptune", 227.9, 6787.0));
-        planetList.add(new Planet("Uranus", 227.9, 6787.0));
-        planetList.add(new Planet("Pluto", 227.9, 6787.0));
+        planetList.add(new Planet("Mercury", 57.9, 4800));
+        planetList.add(new Planet("Venus", 108.2, 12104));
+        planetList.add(new Planet("Earth", 149.6, 12700));
+        planetList.add(new Planet("Mars", 227.9, 6700));
+        planetList.add(new Planet("Jupiter", 778.3, 143000));
+        planetList.add(new Planet("Saturn", 1427.0, 120000));
+        planetList.add(new Planet("Uranus", 2871.0, 51100));
+        planetList.add(new Planet("Neptune", 4497.1, 48600));
+        planetList.add(new Planet("Pluto (dwarf)", 5913.0, 2274));
+        planetList.add(new Planet("Tatoonie", 99999.9, 11000));
+        planetList.add(new Planet("Hoth", 99999.9, 7000));
+        planetList.add(new Planet("Naboo", 99999.9, 14000));
+        planetList.add(new Planet("Alderaan", 99999.9, 15000));
+        planetList.add(new Planet("Dagobah", 99999.9, 11000));
     }
 
     private void setupStandardSpinner() {
@@ -72,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupCustomSpinner() {
         spinnerCustom = (Spinner) findViewById(R.id.spinnerCustom);
         // create the custom array adapter. The 3rd parameter is just a placeholder for the parent class pointing to any textview in the new layout.
-        ArrayAdapter<Planet> planetAdapter = new PlanetAdapter(this, R.layout.planet_row, R.id.textViewPlanetName, planetList);
+        PlanetAdapter planetAdapter = new PlanetAdapter(this, 0, planetList);
         planetAdapter.setDropDownViewResource(R.layout.planet_row);
         spinnerCustom.setAdapter(planetAdapter);
         //-------------------------------------
@@ -91,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupListView() {
-        ArrayAdapter<Planet> planetScrollAdapter = new PlanetAdapter(this, R.layout.planet_row, R.id.textViewPlanetName, planetList);
+        PlanetAdapter planetScrollAdapter = new PlanetAdapter(this, 0, planetList);
         planetScrollAdapter.setDropDownViewResource(R.layout.planet_row);
         listViewPlanets.setAdapter(planetScrollAdapter);
     }

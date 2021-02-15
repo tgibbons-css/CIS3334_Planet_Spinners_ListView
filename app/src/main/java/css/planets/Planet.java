@@ -7,19 +7,19 @@ package css.planets;
 public class Planet {
     private String name;
     private Double distanceFromSol;
-    private Double diameter;
+    private Integer diameter;
 
-    public Planet(String name, Double distanceFromSol, Double diameter) {
+    public Planet(String name, Double distanceFromSol, Integer diameter) {
         this.name = name;
         this.distanceFromSol = distanceFromSol;
         this.diameter = diameter;
     }
 
-    public Double getDiameter() {
+    public Integer getDiameter() {
         return diameter;
     }
 
-    public void setDiameter(Double diameter) {
+    public void setDiameter(Integer diameter) {
         this.diameter = diameter;
     }
 
