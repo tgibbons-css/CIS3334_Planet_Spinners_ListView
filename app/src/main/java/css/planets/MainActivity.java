@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         spinnerCustom = (Spinner) findViewById(R.id.spinnerCustom);
         // create the custom array adapter. The 3rd parameter is just a placeholder for the parent class pointing to any textview in the new layout.
         PlanetAdapter planetAdapter = new PlanetAdapter(this, 0, planetList);
-        planetAdapter.setDropDownViewResource(R.layout.planet_row);
         spinnerCustom.setAdapter(planetAdapter);
         //-------------------------------------
         spinnerCustom.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -98,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupListView() {
         PlanetAdapter planetScrollAdapter = new PlanetAdapter(this, 0, planetList);
-        planetScrollAdapter.setDropDownViewResource(R.layout.planet_row);
         listViewPlanets.setAdapter(planetScrollAdapter);
     }
 
