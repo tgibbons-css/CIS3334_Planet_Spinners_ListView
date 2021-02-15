@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">planet_list</string>
+    <string name="action_settings">Settings</string>
+    <string name="spinner_xml_file_text">Spinner with items in XML file</string>
+    <string name="button2">Button2</string>
+    <string name="button3">Button3</string>
+    <string name="display_items">Display items</string>
+    <string name="selected_item">Item:</string>
+    <string name="spinner_with_items_from_java_arraylist">Spinner with items from Java arraylist</string>
+
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
+</resources>
