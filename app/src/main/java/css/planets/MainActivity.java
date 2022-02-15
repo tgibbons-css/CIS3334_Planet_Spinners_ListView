@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         setupListView();
     }
 
+    /**
+     * Create an arraylist of Planet objects
+     */
     private void initializePlanetList() {
         planetList = new ArrayList<Planet>();
         // planet data from http://www.enchantedlearning.com/subjects/astronomy/planets/
@@ -51,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         planetList.add(new Planet("Dagobah", 99999.9, 11000));
     }
 
+    /**
+     * Simplest spinner -- Uses built-in layout, Planet names from strings.xml
+     */
     private void setupStandardSpinner() {
         spinnerStandard = (Spinner) findViewById(R.id.spinnerJava);
         // Read the planet names from the strings.xml file
@@ -75,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
         //-------------------------------------
     }
 
+    /**
+     * Custom Spinner -- Users PlanetAdapter, uses planet object in planetlist
+     */
     private void setupCustomSpinner() {
         spinnerCustom = (Spinner) findViewById(R.id.spinnerCustom);
         // create the custom array adapter. The 3rd parameter is just a placeholder for the parent class pointing to any textview in the new layout.
@@ -95,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
         //-------------------------------------
     }
 
+    /**
+     * Custom Listview -- Users PlanetAdapter, uses planet object in planetlist
+     */
     private void setupListView() {
         PlanetAdapter planetScrollAdapter = new PlanetAdapter(this, 0, planetList);
         listViewPlanets.setAdapter(planetScrollAdapter);
